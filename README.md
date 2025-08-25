@@ -1,4 +1,4 @@
-### diferent K8s apiVersion & kind types:
+## Diferent K8s apiVersion & kind types:
 
 | `apiVersion`                   | `kind`                               | Purpose                   |
 | ------------------------------ | ------------------------------------ | ------------------------- |
@@ -20,3 +20,14 @@
 | `policy/v1`                    | `PodDisruptionBudget`                | Control pod eviction      |
 | `apiextensions.k8s.io/v1`      | `CustomResourceDefinition` (CRD)     | Define your own API types |
 | `coordination.k8s.io/v1`       | `Lease`                              | Used in leader election   |
+
+## Spark Knowledge
+
+-- Transformations `map(), filter(), GroupByKey(), flatMap()...` build a DAG, but nothing executes `count(), collect(), take(n)...` until an action is called.
+
+### 🔸 D. Execution Plan & Optimization
+
+- DAG Scheduler builds stages based on transformation lineage
+- Task Scheduler sends tasks to executors
+- Catalyst Optimizer (DataFrame/Dataset) rewrites queries for performance
+- Tungsten Engine handles in-memory computation and code generation
