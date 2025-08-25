@@ -1,0 +1,4 @@
+apiversion: v1
+kind: cluster
+metadata:
+  name: spark_cluster
